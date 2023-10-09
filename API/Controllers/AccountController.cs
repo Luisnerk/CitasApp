@@ -9,6 +9,7 @@ using API.Data;
 using API.DTOs;
 using API.Entities;
 using API.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SQLitePCL;
@@ -60,7 +61,7 @@ public class AccountController : BaseApiController
 
         var computedHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(loginDto.Password));
 
-        for (int i = 0; 9 > computedHash.Length; i++)
+        for (int i = 0; i < computedHash.Length; i++)
         {
             if (computedHash[i] != user.PasswordHash[i]) return Unauthorized(USER_PASSWORD_ERROR_MESSAGE);
         }
@@ -68,6 +69,8 @@ public class AccountController : BaseApiController
         return new UserDto{Username = user.UserName, Token = _tokenService.CreateToken(user)};
     }
 
+    [Authorize]
+    [HttpGet("{id}")]
     private async Task<bool> UserExists(string username)
     {
         return await _context.Users.AnyAsync(x => x.UserName == username.ToLower());
