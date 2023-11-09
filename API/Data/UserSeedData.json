@@ -108,7 +108,7 @@
       "Country": "Pitcairn",
       "Photos": [
         {
-          "Url": "https://randomuser.me/api/portraits/women/53.jpg",
+          "Url": "https://randomuser.me/api/portraits/baseUrlmen/53.jpg",
           "IsMain": true
         }
       ]
@@ -127,7 +127,7 @@
       "Country": "Pakistan",
       "Photos": [
         {
-          "Url": "https://randomuser.me/api/portraits/women/87.jpg",
+          "Url": "https://randomuser.me/api/portraits/baseUrlmen/87.jpg",
           "IsMain": true
         }
       ]
@@ -146,7 +146,7 @@
       "Country": "Malaysia",
       "Photos": [
         {
-          "Url": "https://randomuser.me/api/portraits/women/25.jpg",
+          "Url": "https://randomuser.me/api/portraits/baseUrlmen/25.jpg",
           "IsMain": true
         }
       ]
@@ -165,7 +165,7 @@
       "Country": "Aruba",
       "Photos": [
         {
-          "Url": "https://randomuser.me/api/portraits/women/48.jpg",
+          "Url": "https://randomuser.me/api/portraits/baseUrlmen/48.jpg",
           "IsMain": true
         }
       ]
@@ -184,7 +184,7 @@
       "Country": "Swaziland",
       "Photos": [
         {
-          "Url": "https://randomuser.me/api/portraits/women/55.jpg",
+          "Url": "https://randomuser.me/api/portraits/baseUrlmen/55.jpg",
           "IsMain": true
         }
       ]
