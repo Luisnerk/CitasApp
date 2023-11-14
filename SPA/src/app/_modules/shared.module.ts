@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ToastrModule } from 'ngx-toastr';
 import { timeout } from 'rxjs';
 
@@ -9,6 +10,7 @@ import { timeout } from 'rxjs';
   declarations: [],
   imports: [
     CommonModule,
+    TabsModule.forRoot(),
     FormsModule,
     BsDropdownModule.forRoot(),
     ToastrModule.forRoot({
@@ -21,7 +23,8 @@ import { timeout } from 'rxjs';
   exports:
   [
     BsDropdownModule,
-    ToastrModule
+    ToastrModule,
+    TabsModule
   ]
 })
 export class SharedModule { }
