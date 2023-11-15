@@ -30,7 +30,6 @@ import { JwtInterceptor } from './_interceptors/jwt.interceptor';
     NavComponent,
     HomeComponent,
     RegisterComponent,
-    MemberDetailComponent,
     MemberListComponent,
     ListsComponent,
     MessagesComponent,
