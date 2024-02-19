@@ -5,6 +5,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ToastrModule } from 'ngx-toastr';
 import { timeout } from 'rxjs';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [],
@@ -18,13 +19,17 @@ import { timeout } from 'rxjs';
       positionClass: 'toast-bottom-right',
       preventDuplicates: false,
       closeButton: true
+    }),
+    NgxSpinnerModule.forRoot({
+      type: 'ball-scale-multiple'
     })
   ],
   exports:
   [
     BsDropdownModule,
     ToastrModule,
-    TabsModule
+    TabsModule,
+    NgxSpinnerModule
   ]
 })
 export class SharedModule { }
