@@ -1,0 +1,16 @@
+<h4>Internal server error - al refrescar la página se perderá la información</h4>
+<ng-container *ngIf="error">
+    <h5 class="text-danger"> Error: {{error.message}}</h5>
+    <p class="font-waight-bold">La principal razón de este error es el back-end, por favor perdona a los UI.</p>
+    <p>Siguientes pasos</p>
+    <ol>
+        <li>Abrir las herramientas de desarrollo de tu navegador</li>
+        <li>Validar la solicitud errónea en la pestaña de red</li>
+        <li>Revisar la URL de la solicitud - Está correcta la dirección de lo que solicitas?</li>
+        <li>Reprodcir el problema en PostMan - si se prduce lo mismo, Angular no es el culpable</li>
+    </ol>
+    <p style="font-weight: bold;">A continuación, puedes encontrar la pila de llamadas del error.</p>
+    <code class="mt-5" style="background-color: whitesmoke;">
+        {{error.details}}
+    </code>
+</ng-container>
