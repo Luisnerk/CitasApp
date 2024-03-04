@@ -15,7 +15,7 @@ import { MembersService } from 'src/app/_services/members.service';
 export class MemberEditComponent implements OnInit {
   @ViewChild("editForm") editForm: NgForm | undefined;
   @HostListener("window:beforeunload", ["$event"]) unloadNotification($event: any) {
-    if(this.editForm?.dirty) {
+    if (this.editForm?.dirty) {
       $event.returnValue = true;
     }
   };
@@ -25,11 +25,11 @@ export class MemberEditComponent implements OnInit {
   constructor(private accountService: AccountService,
     private membersService: MembersService,
     private toastr: ToastrService) {
-      this.accountService.currentUser$.pipe(take(1)).subscribe({
-        next: user => this.user = user
-      });
-    }
-  
+    this.accountService.currentUser$.pipe(take(1)).subscribe({
+      next: user => this.user = user
+    });
+  }
+
   ngOnInit(): void {
     this.loadMember();
   }
@@ -44,8 +44,8 @@ export class MemberEditComponent implements OnInit {
 
   updateMember() {
     this.membersService.updateMember(this.editForm?.value).subscribe({
-      next: () => {
-        this.toastr.success("Profile updated successfully");
+      next: _ => {
+        this.toastr.success("Se ha actualizado tu perfil");
         this.editForm?.reset(this.member);
       }
     });

@@ -6,6 +6,7 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ToastrModule } from 'ngx-toastr';
 import { timeout } from 'rxjs';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { FileUploadModule } from 'ng2-file-upload';
 
 @NgModule({
   declarations: [],
@@ -22,14 +23,16 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     }),
     NgxSpinnerModule.forRoot({
       type: 'ball-scale-multiple'
-    })
+    }),
+    FileUploadModule,
   ],
   exports:
   [
     BsDropdownModule,
     ToastrModule,
     TabsModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    FileUploadModule,
   ]
 })
 export class SharedModule { }
