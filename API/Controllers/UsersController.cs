@@ -108,6 +108,6 @@ public class UsersController : BaseApiController
 
         if (await _userRepository.SaveAllAsync()) return NoContent();
 
-        return BadRequest("No se pudo establecer tu foro como principal");
+        return BadRequest("No se pudo establecer tu foto como principal");
     }
 }
