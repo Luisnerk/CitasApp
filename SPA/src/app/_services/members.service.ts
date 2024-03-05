@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { IMember } from '../_models/imember';
-import { map, of } from 'rxjs';
+import { Observable, map, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -29,6 +29,7 @@ export class MembersService {
     if (member !== undefined) return of(member);
     return this.http.get<IMember>(this.baseUrl + "users/" + username);
   }
+
   updateMember(member: IMember) {
     return this.http.put(this.baseUrl + "users", member).pipe(
       map(() => {
@@ -36,5 +37,9 @@ export class MembersService {
         this.members[index] = {...this.members[index], ...member};
       }),
     );
+  }
+
+  setMainPhoto(photoId: number): Observable<Object> {
+    return this.http.put(this.baseUrl + "users/photo/" + photoId, {});
   }
 }
