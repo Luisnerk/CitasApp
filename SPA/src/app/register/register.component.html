@@ -17,10 +17,10 @@
         [label]="'Username'"></app-text-input>
     <app-text-input 
         [formControl]="$any(registerForm.controls['knownAs'])" 
-        [label]="'Known As'"></app-text-input>
+        [label]="'Known as'"></app-text-input>
     <app-date-picker 
         [formControl]="$any(registerForm.controls['dateOfBirth'])" 
-        [label]="'Date Of Birth'"></app-date-picker>
+        [label]="'Date of birth'"></app-date-picker>
     <app-text-input 
         [formControl]="$any(registerForm.controls['city'])" 
         [label]="'City'"></app-text-input>
@@ -34,15 +34,24 @@
     <app-text-input 
         [formControl]="$any(registerForm.controls['confirmPassword'])" 
         [label]="'Confirm password'" [type]="'password'"></app-text-input>
+
+        <div class="row" *ngIf="validationErrors">
+            <ul class="text-danger">
+                <li *ngFor="let error of validationErrors">
+                    {{error}}
+                </li>
+            </ul>
+        </div>
+
     <div class="text-center">
         <button [disabled]="!registerForm.valid" class="btn btn-success me-2" type="submit">Registrarme</button>
         <button class="btn btn-default" type="button" (click)="cancel()">Cancelar</button>
     </div>
 </form>
 
-<p>
+<!-- <p>
     Form value: {{ registerForm.value | json }}
 </p>
 <p>
     Form status: {{ registerForm.status | json }}
-</p>
+</p> -->
