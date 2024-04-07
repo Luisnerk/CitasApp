@@ -31,8 +31,38 @@
                 </option>
             </select>
         </div>
+
         <button class="btn btn-primary ms-1" type="submit">Filtrar</button>
         <button (click)="resetFilters()" class="btn btn-primary ms-1" type="submit">Reiniciar</button>
+
+        <div class="col">
+            <div class="btn-group float-end">
+                <button class="btn btn-primary" 
+                        type="button"
+                        name="orderBy" 
+                        [(ngModel)]="userParams.orderBy"
+                        (click)="loadMembers()"
+                        btnRadio="lastActive">
+                    Activo
+                </button>
+                <button class="btn btn-primary" 
+                        type="button"
+                        name="orderBy" 
+                        [(ngModel)]="userParams.orderBy"
+                        (click)="loadMembers()"
+                        btnRadio="created">
+                    Registro
+                </button>
+                <button class="btn btn-primary" 
+                        type="button"
+                        name="orderBy" 
+                        [(ngModel)]="userParams.orderBy"
+                        (click)="loadMembers()"
+                        btnRadio="dob">
+                    Edad
+                </button>
+            </div>
+        </div>
     </form>
 </div>
 
