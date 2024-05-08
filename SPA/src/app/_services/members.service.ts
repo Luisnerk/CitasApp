@@ -100,10 +100,10 @@ export class MembersService {
     return this.http.post(this.baseUrl + "likes/" + username, {});
   }
 
-  getLikes(predicate: string): Observable<Object> {
-    return this.http.get(this.baseUrl + "likes?predicate=" + predicate);
+  getLikes(predicate: string): Observable<Member[]> {
+    return this.http.get<Member[]>(this.baseUrl + "likes?predicate=" + predicate);
   }
-
+  
   private getPaginatedResult<T>(url: string, params: HttpParams): Observable<PaginatedResult<T>> {
     const paginatedResult: PaginatedResult<T> = new PaginatedResult<T>;
     return this.http.get<T>(url, { observe: "response", params }).pipe(
