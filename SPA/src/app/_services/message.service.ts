@@ -30,4 +30,7 @@ export class MessageService {
       { recipientUsername: username, content});
   }
   
+  deleteMessage(id: number): Observable<Object> {
+    return this.http.delete(this.baseUrl + "messages/" + id);
+  }
 }

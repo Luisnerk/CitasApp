@@ -45,14 +45,14 @@
                     : '/members/' + message.senderUsername}}" [queryParams]="{tab: 'Mensajes'}">
                 <td>{{message.content}}</td>
                 <td>
-                    <div *ngIf="container === 'outbox'">
+                    <div *ngIf="container === 'Outbox'">
                         <img
                             class="img-circle rounded-circle me-2"
                             src="{{message.recipientPhotoUrl || './assets/user.png'}}"
                             alt="recipient photo">
                         <strong>{{message.recipientUsername | titlecase}}</strong>
                     </div>
-                    <div *ngIf="container !== 'outbox'">
+                    <div *ngIf="container !== 'Outbox'">
                         <img
                             class="img-circle rounded-circle me-2"
                             src="{{message.senderPhotoUrl || './assets/user.png'}}"
@@ -62,7 +62,7 @@
                 </td>
                 <td>{{message.messageSent + "Z" | timeago}}</td>
                 <td>
-                    <button class="btn btn-danger">Delete</button>
+                    <button (click)="$event.stopPropagation()" (click)="deleteMessage(message.id)" class="btn btn-danger">Borrar</button>
                 </td>
             </tr>
         </tbody>
